@@ -40,12 +40,12 @@ function start() { // Inicio da função start()
 	let perdidos = 0;
 
 
-	var somDisparo = document.getElementById("somDisparo");
-	var somExplosao = document.getElementById("somExplosao");
-	var musica = document.getElementById("musica");
-	var somGameover = document.getElementById("somGameover");
-	var somPerdido = document.getElementById("somPerdido");
-	var somResgate = document.getElementById("somResgate");
+	let somDisparo = document.getElementById("somDisparo");
+	let somExplosao = document.getElementById("somExplosao");
+	let musica = document.getElementById("musica");
+	let somGameover = document.getElementById("somGameover");
+	let somPerdido = document.getElementById("somPerdido");
+	let somResgate = document.getElementById("somResgate");
 
 	//Música em loop
 	musica.addEventListener("ended", function () { musica.currentTime = 0; musica.play(); }, false);
@@ -71,15 +71,7 @@ function start() { // Inicio da função start()
 
 	//Principais variáveis do jogo
 
-
-
-
-
 	jogo.timer = setInterval(loop, 30);
-
-
-
-
 
 	//Função que movimenta o fundo do jogo
 
@@ -89,7 +81,6 @@ function start() { // Inicio da função start()
 		$("#fundoGame").css("background-position", esquerda - 1);
 
 	} // fim da função movefundo()
-
 
 
 	function movejogador() {
@@ -125,6 +116,7 @@ function start() { // Inicio da função start()
 			//Chama função Disparo	
 		}
 
+
 	} // fim da função movejogador()
 
 	function moveinimigo1() {
@@ -141,6 +133,7 @@ function start() { // Inicio da função start()
 		}
 	} //Fim da função moveinimigo1()
 
+
 	function moveinimigo2() {
 		var posicaoX = parseInt($("#inimigo2").css("left"));
 		$("#inimigo2").css("left", posicaoX - 3);
@@ -151,6 +144,7 @@ function start() { // Inicio da função start()
 
 		}
 	} // Fim da função moveinimigo2()
+
 
 	function moveamigo() {
 
@@ -164,6 +158,7 @@ function start() { // Inicio da função start()
 		}
 
 	} // fim da função moveamigo()
+
 
 	function disparo() {
 
@@ -187,6 +182,7 @@ function start() { // Inicio da função start()
 
 		} //Fecha podeAtirar
 
+
 		function executaDisparo() {
 			posicaoX = parseInt($("#disparo").css("left"));
 			$("#disparo").css("left", posicaoX + 15);
@@ -201,10 +197,6 @@ function start() { // Inicio da função start()
 			}
 		} // Fecha executaDisparo()
 	} // Fecha disparo()
-
-
-
-
 
 
 	function colisao() {
@@ -491,18 +483,15 @@ function start() { // Inicio da função start()
 	} // Fim da função loop()
 
 
-
-
-
-
 } // Fim da função start
 
 //Reinicia o Jogo
-		
+
+
 function reiniciaJogo() {
 	somGameover.pause();
 	$("#fim").remove();
 	start();
-	
+
 } //Fim da função reiniciaJogo
 
